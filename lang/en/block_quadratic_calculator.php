@@ -6,3 +6,4 @@ $string['coefficienta'] = 'Сoefficient A';
 $string['coefficientb'] = 'Сoefficient B';
 $string['coefficientc'] = 'Сoefficient C';
 $string['calculate'] = 'Calculate';
+$string['error_calculate_roots'] = 'The equation has no real roots';
