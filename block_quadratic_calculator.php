@@ -17,7 +17,8 @@ class block_quadratic_calculator extends block_base {
     $this->content->text = '';
     $this->content->footer = '';
 
-    $PAGE->requires->js_call_amd('block_quadratic_calculator/assets/module', 'init');
+    // Загрузка JavaScript-модуля для AJAX.
+    $PAGE->requires->js_call_amd('block_quadratic_calculator/module', 'init');
 
     $data = new stdClass();
       $data->action_url = $this->page->url->out(false);

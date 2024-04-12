@@ -1,17 +1,37 @@
-document.addEventListener('DOMContentLoaded', function() {
-  var form = document.querySelector('#quadratic-calculator-form');
-  form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var xhr = new XMLHttpRequest();
-      xhr.open('POST', form.action);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.onload = function() {
-          if (xhr.status === 200) {
-              var response = JSON.parse(xhr.responseText);
-              document.querySelector('#result_x1').textContent = response.x1;
-              document.querySelector('#result_x2').textContent = response.x2;
-          }
-      };
-      xhr.send('a=' + form.a.value + '&b=' + form.b.value + '&c=' + form.c.value + '&sesskey=' + form.sesskey.value);
-  });
+define(['jquery'], function($) {
+    return {
+        init: function() {
+            $('#quadratic-calculator-form').on('submit', function(e) {
+                e.preventDefault(); // Предотвращаем стандартную отправку формы
+
+                // Собираем данные формы
+                var formData = {
+                    a: $('#a').val(),
+                    b: $('#b').val(),
+                    c: $('#c').val(),
+                    sesskey: $('[name=sesskey]').val()
+                };
+
+                // Отправляем данные на сервер с помощью AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: M.cfg.wwwroot + '/blocks/quadratic_calculator/calculate.php',
+                    data: formData,
+                    success: function(response) {
+                        // Обрабатываем ответ сервера
+                        var data = JSON.parse(response);
+                        if (data.hasOwnProperty('x1') && data.hasOwnProperty('x2')) {
+                            // Выводим результаты на страницу
+                            $('#result_x1').text(data.x1);
+                            $('#result_x2').text(data.x2);
+                        }
+                    },
+                    error: function() {
+                        // Обрабатываем возможные ошибки запроса
+                        alert('Error calculating the quadratic equation.');
+                    }
+                });
+            });
+        }
+    };
 });
