@@ -1,18 +1,12 @@
 <form id="quadratic-calculator-form" method="post" action="{{{action_url}}}">
     <input type="hidden" name="sesskey" value="{{{sesskey}}}">
-    <!-- Поля формы и кнопка отправки -->
-    <label for="a">{{#str}}coefficient_a, block_quadratic_calculator{{/str}}</label>
+    <label for="a">{{#str}}coefficienta, block_quadratic_calculator{{/str}}</label>
     <input type="text" id="a" name="a" required>
-    <label for="b">{{#str}}coefficient_b, block_quadratic_calculator{{/str}}</label>
+    <label for="b">{{#str}}coefficientb, block_quadratic_calculator{{/str}}</label>
     <input type="text" id="b" name="b" required>
-    <label for="c">{{#str}}coefficient_c, block_quadratic_calculator{{/str}}</label>
+    <label for="c">{{#str}}coefficientc, block_quadratic_calculator{{/str}}</label>
     <input type="text" id="c" name="c" required>
-
     <input type="submit" value="{{#str}}calculate, block_quadratic_calculator{{/str}}">
+    <div id="result_x1"></div>
+    <div id="result_x2"></div>
 </form>
-{{#x1}}
-    <div>Root x1: {{{x1}}}</div>
-{{/x1}}
-{{#x2}}
-    <div>Root x2: {{{x2}}}</div>
-{{/x2}}
