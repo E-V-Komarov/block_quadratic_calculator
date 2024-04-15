@@ -1,4 +1,6 @@
 <?php
+declare(strict_types=1);
+
 require_once(__DIR__ . '/../../config.php');
 require_login();
 require_sesskey();
@@ -25,14 +27,15 @@ if ($discriminant > 0) {
 if (isset($x1) && isset($x2)) {
     $result = ['x1' => $x1, 'x2' => $x2];
     // Сохраняем результаты в базу данных
-    $record = new stdClass();
-    $record->userid = $USER->id;
-    $record->a = $a;
-    $record->b = $b;
-    $record->c = $c;
-    $record->x1 = $x1;
-    $record->x2 = $x2;
-    $record->timemodified = time();
+    $record = (object) [
+        'userid' => $USER->id,
+        'a' => $a,
+        'b' => $b,
+        'c' => $c,
+        'x1' => $x1,
+        'x2' => $x2,
+        'timemodified' => time(),
+    ];
 
     $DB->insert_record('block_quadratic_calculator_history', $record);
     
