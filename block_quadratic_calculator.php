@@ -39,7 +39,7 @@ class block_quadratic_calculator extends block_base {
       $this->content->text = $OUTPUT->render_from_template('block_quadratic_calculator/calculator_form', $data);
   
       // Добавляем HTML-код кнопки для открытия модального окна.
-      $this->content->text .= $OUTPUT->render_from_template('block_quadratic_calculator/history', new stdClass());
+      //$this->content->text .= $OUTPUT->render_from_template('block_quadratic_calculator/history', new stdClass());
   
       return $this->content;
     }
