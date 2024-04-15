@@ -21,3 +21,8 @@
 * Database: MySQL with XML database representation
 * Communication: AJAX requests for dynamic data retrieval and manipulation
 * User Interface: moodle modal dialogs for user interactions, moodle theme styles for consistent visual appearance
+
+## Future Enhancements:
+
+* Record Management - delete Records (Individual and Bulk)
+* Database History Limits - performance optimization
