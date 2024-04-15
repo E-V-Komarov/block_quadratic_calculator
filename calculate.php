@@ -33,13 +33,9 @@ if (isset($x1) && isset($x2)) {
     $record->x1 = $x1;
     $record->x2 = $x2;
     $record->timemodified = time();
+
+    $DB->insert_record('block_quadratic_calculator_history', $record);
     
-    try {
-        $DB->insert_record('block_quadratic_calculator_history', $record);
-    } catch (dml_exception $e) {
-        //debugging('Error inserting record: ' . $e->getMessage(), DEBUG_DEVELOPER);
-        $result['error'] = get_string('error_insert_record', 'block_quadratic_calculator');
-    }
 } else {
     $result['error'] = get_string('error_calculate_roots', 'block_quadratic_calculator');
 }

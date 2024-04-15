@@ -4,19 +4,17 @@
             <FIELDS>
                 <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
                 <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true"/>
-                <FIELD NAME="a" TYPE="number" LENGTH="10, 5" NOTNULL="true"/>
-                <FIELD NAME="b" TYPE="number" LENGTH="10, 5" NOTNULL="true"/>
-                <FIELD NAME="c" TYPE="number" LENGTH="10, 5" NOTNULL="true"/>
-                <FIELD NAME="x1" TYPE="number" LENGTH="10, 5" NOTNULL="false"/>
-                <FIELD NAME="x2" TYPE="number" LENGTH="10, 5" NOTNULL="false"/>
+                <FIELD NAME="a" TYPE="float" NOTNULL="true"/>
+                <FIELD NAME="b" TYPE="float" NOTNULL="true"/>
+                <FIELD NAME="c" TYPE="float" NOTNULL="true"/>
+                <FIELD NAME="x1" TYPE="float" NOTNULL="false"/>
+                <FIELD NAME="x2" TYPE="float" NOTNULL="false"/>
                 <FIELD NAME="timemodified" TYPE="int" LENGTH="10" NOTNULL="true"/>
             </FIELDS>
             <KEYS>
                 <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
+                <KEY NAME="foreign-userid" TYPE="foreign" FIELDS="userid" REFTABLE="user" REFFIELDS="id"/>
             </KEYS>
-            <INDEXES>
-                <INDEX NAME="userid" UNIQUE="false" FIELDS="userid"/>
-            </INDEXES>
         </TABLE>
     </TABLES>
 </XMLDB>
