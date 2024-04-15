@@ -6,3 +6,7 @@ $string['coefficienta'] = 'Сoefficient A';
 $string['coefficientb'] = 'Сoefficient B';
 $string['coefficientc'] = 'Сoefficient C';
 $string['calculate'] = 'Calculate';
+$string['error_calculate_roots'] = 'Warning: the equation has no real roots';
+$string['block_discription'] = 'Allows you to solve equations of the type';
+$string['input_title'] = 'Enter a valid number';
+$string['history'] = 'History';

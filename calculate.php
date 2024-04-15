@@ -25,7 +25,7 @@ if ($discriminant > 0) {
     $x1 = -$b / (2 * $a);
     $result = ['x1' => $x1, 'x2' => $x1];
 } else {
-    $result = ['error' => 'The equation has no real roots.'];
+    $result = ['error' => get_string('error_calculate_roots', 'block_quadratic_calculator')];
 }
 
 echo json_encode($result);
