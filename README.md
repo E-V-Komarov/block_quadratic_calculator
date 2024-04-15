@@ -15,3 +15,9 @@
 * Run the application or install the Moodle block plugin as per the instructions.
 * Enter the coefficients (a, b, c) of the quadratic equation and click "Calculate".
 * The calculated roots (x1 and x2) will be displayed, along with an option to save the results to the database.
+
+## Technical Implementation Details:
+
+* Database: MySQL with XML database representation
+* Communication: AJAX requests for dynamic data retrieval and manipulation
+* User Interface: moodle modal dialogs for user interactions, moodle theme styles for consistent visual appearance
