@@ -10,8 +10,8 @@
 
 ## To Use:
 
-Download the source code.
-Install any necessary dependencies.
-Run the application or install the Moodle block plugin as per the instructions.
-Enter the coefficients (a, b, c) of the quadratic equation and click "Calculate".
-The calculated roots (x1 and x2) will be displayed, along with an option to save the results to the database.
+* Download the source code.
+* Install any necessary dependencies.
+* Run the application or install the Moodle block plugin as per the instructions.
+* Enter the coefficients (a, b, c) of the quadratic equation and click "Calculate".
+* The calculated roots (x1 and x2) will be displayed, along with an option to save the results to the database.
