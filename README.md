@@ -10,7 +10,7 @@
 
 ## To Use:
 
-* Download the source code.
+* Download the source code or release file (.zip).
 * Install any necessary dependencies.
 * Run the application or install the Moodle block plugin as per the instructions.
 * Enter the coefficients (a, b, c) of the quadratic equation and click "Calculate".
